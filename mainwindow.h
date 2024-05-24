@@ -54,6 +54,7 @@ private slots:
         currentSortAlgorithm = 1;
         sortMode = 1;
         sorter->mullisort(sortMode);
+        MainWindow::selectionSortButton->setVisible(false);
     }
 
     void onSelectionSortClicked() {
@@ -62,6 +63,7 @@ private slots:
         currentSortAlgorithm = 2;
         sortMode = 1;
         sorter->valikumeetod(sortMode);
+         MainWindow::bubbleSortButton->setVisible(false);
     }
 
     void onNextStepClicked() {
@@ -88,6 +90,9 @@ private slots:
 
     void onSortingFinished() {
         updateArrayDisplay();
+        MainWindow::selectionSortButton->setVisible(true);
+        MainWindow::bubbleSortButton->setVisible(true);
+
     }
 };
 
