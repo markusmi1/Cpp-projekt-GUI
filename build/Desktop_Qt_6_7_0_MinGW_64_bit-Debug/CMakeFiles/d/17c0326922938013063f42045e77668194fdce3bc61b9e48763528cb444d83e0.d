@@ -8,7 +8,7 @@ QtProov_autogen/timestamp: \
   C:/C++\ programmeerimine/QtProov/main.cpp \
   C:/C++\ programmeerimine/QtProov/mainwindow.cpp \
   C:/C++\ programmeerimine/QtProov/mainwindow.h \
-  C:/C++\ programmeerimine/QtProov/s.cpp \
+  C:/C++\ programmeerimine/QtProov/sorteerimismeetodid.cpp \
   C:/C++\ programmeerimine/QtProov/sorteerimismeetodid.h \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QDebug \
   C:/Qt/6.7.0/mingw_64/include/QtCore/QObject \

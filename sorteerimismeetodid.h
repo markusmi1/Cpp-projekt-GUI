@@ -21,7 +21,7 @@ private:
 public:
     SorteerimisWrapper(vector<int> sisend, int suurus) : massiiv(sisend), suurus(suurus) {}
     ~SorteerimisWrapper() {
-        qDebug() << "kustutan klassi";
+        cout << "kustutan klassi";
     }
 
     void setArray(vector<int> sisend, int suurus) {
@@ -29,7 +29,7 @@ public:
         this->suurus = suurus;
     }
 
-    void mullisort(int mode) {
+    void mullisort(bool lõppu) {
         bool vahetatud;
         for (int i = 0; i < suurus - 1; ++i) {
             vahetatud = false;
@@ -37,22 +37,18 @@ public:
                 if (massiiv[j] > massiiv[j + 1]) {
                     swap(massiiv[j], massiiv[j + 1]);
                     vahetatud = true;
-                    if (mode == 1) {
-                        emit arrayUpdated();
+                    if(!lõppu){
+                        emit uuendatudMassiiv();
                         return;
                     }
                 }
             }
             if (!vahetatud) break;
-            if (mode == 2) {
-                emit arrayUpdated();
-                return;
-            }
         }
-        emit sortingFinished();
+        emit lõpp();
     }
 
-    void valikumeetod(int mode) {
+    void valikumeetod(bool lõppu) {
         int i, j, väikseimIndeks;
         for (i = 0; i < suurus - 1; i++) {
             väikseimIndeks = i;
@@ -62,17 +58,13 @@ public:
             }
             if (väikseimIndeks != i) {
                 swap(massiiv[väikseimIndeks], massiiv[i]);
-                if (mode == 1) {
-                    emit arrayUpdated();
+                if (!lõppu) {
+                    emit uuendatudMassiiv();
                     return;
                 }
             }
-            if (mode == 2) {
-                emit arrayUpdated();
-                return;
-            }
         }
-        emit sortingFinished();
+        emit lõpp();
     }
 
     vector<int> getMassiiv() {
@@ -80,8 +72,8 @@ public:
     }
 
 signals:
-    void arrayUpdated();
-    void sortingFinished();
+    void uuendatudMassiiv();
+    void lõpp();
 };
 
 vector<int> looVektor(const QString& m);

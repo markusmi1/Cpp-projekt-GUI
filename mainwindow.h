@@ -13,85 +13,100 @@ class MainWindow : public QMainWindow {
 
 private:
     SorteerimisWrapper* sorter;
-    QLineEdit* inputField;
-    QPushButton* bubbleSortButton;
-    QPushButton* selectionSortButton;
-    QPushButton* nextStepButton;
-    QLabel* arrayLabel;
-    int sortMode;
-    int currentSortAlgorithm;
+    QLineEdit* sisend;
+    QPushButton* mulliNupp;
+    QPushButton* valikuNupp;
+    QPushButton* jargmineSammNupp;
+    QPushButton* loppuNupp;
+    QLabel* massiiviKuva;
+    int praeguneMeetod;
 
 public:
-    MainWindow(QWidget *parent = nullptr) : QMainWindow(parent), sorter(new SorteerimisWrapper({}, 0)), sortMode(0), currentSortAlgorithm(0) {
+    MainWindow(QWidget *parent = nullptr) : QMainWindow(parent), sorter(new SorteerimisWrapper({}, 0)), praeguneMeetod(0) {
         QWidget* centralWidget = new QWidget(this);
         QVBoxLayout* layout = new QVBoxLayout(centralWidget);
 
-        inputField = new QLineEdit(this);
-        bubbleSortButton = new QPushButton("Bubble Sort", this);
-        selectionSortButton = new QPushButton("Selection Sort", this);
-        nextStepButton = new QPushButton("Next Step", this);
-        arrayLabel = new QLabel(this);
+        sisend = new QLineEdit(this);
+        mulliNupp = new QPushButton("Bubble Sort", this);
+        valikuNupp = new QPushButton("Selection Sort", this);
+        jargmineSammNupp = new QPushButton("Next Step", this);
+        loppuNupp = new QPushButton("Lõppu", this);
+        massiiviKuva = new QLabel(this);
 
-        layout->addWidget(inputField);
-        layout->addWidget(bubbleSortButton);
-        layout->addWidget(selectionSortButton);
-        layout->addWidget(nextStepButton);
-        layout->addWidget(arrayLabel);
+        layout->addWidget(sisend);
+        layout->addWidget(mulliNupp);
+        layout->addWidget(valikuNupp);
+        layout->addWidget(jargmineSammNupp);
+        layout->addWidget(loppuNupp);
+        layout->addWidget(massiiviKuva);
 
         setCentralWidget(centralWidget);
 
-        connect(bubbleSortButton, &QPushButton::clicked, this, &MainWindow::onBubbleSortClicked);
-        connect(selectionSortButton, &QPushButton::clicked, this, &MainWindow::onSelectionSortClicked);
-        connect(nextStepButton, &QPushButton::clicked, this, &MainWindow::onNextStepClicked);
-        connect(sorter, &SorteerimisWrapper::arrayUpdated, this, &MainWindow::updateArrayDisplay);
-        connect(sorter, &SorteerimisWrapper::sortingFinished, this, &MainWindow::onSortingFinished);
+        connect(mulliNupp, &QPushButton::clicked, this, &MainWindow::onMulliClicked);
+        connect(valikuNupp, &QPushButton::clicked, this, &MainWindow::onValikuClicked);
+        connect(jargmineSammNupp, &QPushButton::clicked, this, &MainWindow::onJargmineClicked);
+        connect(loppuNupp, &QPushButton::clicked, this, &MainWindow::onLoppuClicked);
+        connect(sorter, &SorteerimisWrapper::uuendatudMassiiv, this, &MainWindow::uuendaKuva);
+        connect(sorter, &SorteerimisWrapper::lõpp, this, &MainWindow::onSortingFinished);
     }
 
 private slots:
-    void onBubbleSortClicked() {
-        vector<int> array = looVektor(inputField->text());
-        sorter->setArray(array, array.size());
-        currentSortAlgorithm = 1;
-        sortMode = 1;
-        sorter->mullisort(sortMode);
-        MainWindow::selectionSortButton->setVisible(false);
+    void onMulliClicked() {
+        if(valikuNupp->isVisible()){
+            praeguneMeetod = 1;
+            MainWindow::valikuNupp->setVisible(false);
+            vector<int> array = looVektor(sisend->text());
+            sorter->setArray(array, array.size());
+            emit sorter->uuendatudMassiiv();
+        } else
+            sorter->mullisort(false);
     }
 
-    void onSelectionSortClicked() {
-        vector<int> array = looVektor(inputField->text());
-        sorter->setArray(array, array.size());
-        currentSortAlgorithm = 2;
-        sortMode = 1;
-        sorter->valikumeetod(sortMode);
-         MainWindow::bubbleSortButton->setVisible(false);
+    void onValikuClicked() {
+        if(mulliNupp->isVisible()){
+            vector<int> array = looVektor(sisend->text());
+            sorter->setArray(array, array.size());
+            praeguneMeetod = 2;
+            MainWindow::mulliNupp->setVisible(false);
+            emit sorter->uuendatudMassiiv();
+        }else{
+            sorter->valikumeetod(false);
+        }
+
     }
 
-    void onNextStepClicked() {
-        sortMode = 1;
-        if (currentSortAlgorithm == 1) {
-            sorter->mullisort(sortMode);
-        } else if (currentSortAlgorithm == 2) {
-            sorter->valikumeetod(sortMode);
+    void onJargmineClicked() {
+        if (praeguneMeetod == 1) {
+            sorter->mullisort(false);
+        } else if (praeguneMeetod == 2) {
+            sorter->valikumeetod(false);
+        }
+    }
+    void onLoppuClicked() {
+        if (praeguneMeetod == 1) {
+            sorter->mullisort(true);
+        } else if (praeguneMeetod == 2) {
+            sorter->valikumeetod(true);
         }
     }
 
-    void updateArrayDisplay() {
-        vector<int> array = sorter->getMassiiv();
-        QString arrayText = "[";
-        for (size_t i = 0; i < array.size(); ++i) {
-            arrayText += QString::number(array[i]);
-            if (i < array.size() - 1) {
-                arrayText += ", ";
+    void uuendaKuva() {
+        vector<int> massiiv = sorter->getMassiiv();
+        QString sisu = "[";
+        for (size_t i = 0; i < massiiv.size(); ++i) {
+            sisu += QString::number(massiiv[i]);
+            if (i < massiiv.size() - 1) {
+                sisu += ", ";
             }
         }
-        arrayText += "]";
-        arrayLabel->setText(arrayText);
+        sisu += "]";
+        massiiviKuva->setText(sisu);
     }
 
     void onSortingFinished() {
-        updateArrayDisplay();
-        MainWindow::selectionSortButton->setVisible(true);
-        MainWindow::bubbleSortButton->setVisible(true);
+        uuendaKuva();
+        MainWindow::valikuNupp->setVisible(true);
+        MainWindow::mulliNupp->setVisible(true);
 
     }
 };

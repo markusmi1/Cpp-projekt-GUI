@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-3f0dfd005f73030a2f06.json",
+					"jsonFile" : "directory-.-Debug-ae87a7f392e367105a6a.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "QtProov::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-QtProov-Debug-d06ec576a4e06dfa22ad.json",
+					"jsonFile" : "target-QtProov-Debug-ebda719b603788ee9df2.json",
 					"name" : "QtProov",
 					"projectIndex" : 0
 				},

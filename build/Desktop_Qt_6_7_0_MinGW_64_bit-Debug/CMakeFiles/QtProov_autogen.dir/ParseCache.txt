@@ -393,9 +393,9 @@ C:/C++ programmeerimine/QtProov/mainwindow.h
  mdp:C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h
  mdp:C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h
-C:/C++ programmeerimine/QtProov/s.cpp
-C:/C++ programmeerimine/QtProov/mainwindow.cpp
 C:/C++ programmeerimine/QtProov/main.cpp
+C:/C++ programmeerimine/QtProov/mainwindow.cpp
+C:/C++ programmeerimine/QtProov/s.cpp
 C:/C++ programmeerimine/QtProov/sorteerimismeetodid.h
  mmc:Q_OBJECT
  mdp:C:/C++ programmeerimine/QtProov/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/QtProov_autogen/moc_predefs.h

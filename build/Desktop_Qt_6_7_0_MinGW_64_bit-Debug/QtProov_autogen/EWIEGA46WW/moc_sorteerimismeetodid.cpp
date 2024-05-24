@@ -36,9 +36,9 @@ namespace {
 struct qt_meta_stringdata_CLASSSorteerimisWrapperENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSSorteerimisWrapperENDCLASS = QtMocHelpers::stringData(
     "SorteerimisWrapper",
-    "arrayUpdated",
+    "uuendatudMassiiv",
     "",
-    "sortingFinished"
+    "lõpp"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -78,9 +78,9 @@ Q_CONSTINIT const QMetaObject SorteerimisWrapper::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSSorteerimisWrapperENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<SorteerimisWrapper, std::true_type>,
-        // method 'arrayUpdated'
+        // method 'uuendatudMassiiv'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'sortingFinished'
+        // method 'lõpp'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -92,22 +92,22 @@ void SorteerimisWrapper::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         auto *_t = static_cast<SorteerimisWrapper *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->arrayUpdated(); break;
-        case 1: _t->sortingFinished(); break;
+        case 0: _t->uuendatudMassiiv(); break;
+        case 1: _t->lõpp(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
             using _t = void (SorteerimisWrapper::*)();
-            if (_t _q_method = &SorteerimisWrapper::arrayUpdated; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            if (_t _q_method = &SorteerimisWrapper::uuendatudMassiiv; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
             }
         }
         {
             using _t = void (SorteerimisWrapper::*)();
-            if (_t _q_method = &SorteerimisWrapper::sortingFinished; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            if (_t _q_method = &SorteerimisWrapper::lõpp; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 1;
                 return;
             }
@@ -147,13 +147,13 @@ int SorteerimisWrapper::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void SorteerimisWrapper::arrayUpdated()
+void SorteerimisWrapper::uuendatudMassiiv()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
 }
 
 // SIGNAL 1
-void SorteerimisWrapper::sortingFinished()
+void SorteerimisWrapper::lõpp()
 {
     QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
