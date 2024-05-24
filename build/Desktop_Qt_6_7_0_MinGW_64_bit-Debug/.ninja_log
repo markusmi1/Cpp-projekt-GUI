@@ -1,0 +1,18 @@
+# ninja log v5
+6	1095	7382487184419118	QtProov_autogen/timestamp	36515b2d307614e
+6	1095	7382487184419118	QtProov_autogen/mocs_compilation.cpp	36515b2d307614e
+2309	2467	7382475067328707	QtProov.exe	f58c0474b944d177
+6	1095	7382487184419118	C:/C++ programmeerimine/QtProov/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/QtProov_autogen/timestamp	36515b2d307614e
+6	1095	7382487184419118	C:/C++ programmeerimine/QtProov/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/QtProov_autogen/mocs_compilation.cpp	36515b2d307614e
+1096	4409	7382487218206594	CMakeFiles/QtProov.dir/QtProov_autogen/mocs_compilation.cpp.obj	cdeb528cc4209aa4
+1100	1634	7382487190419773	CMakeFiles/QtProov.dir/mainwindow.cpp.obj	5bf778b53b3de21
+1098	4532	7382487219433081	CMakeFiles/QtProov.dir/main.cpp.obj	32d7b65111d4247c
+111	1646	7382475059171522	CMakeFiles/QtProov.dir/sorteerimismeetodid.cpp.obj	cb4dbf541f9a5ba6
+4	1003	7382487800548979	QtProov_autogen/timestamp	36515b2d307614e
+4	1003	7382487800548979	QtProov_autogen/mocs_compilation.cpp	36515b2d307614e
+4	1003	7382487800548979	C:/C++ programmeerimine/QtProov/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/QtProov_autogen/timestamp	36515b2d307614e
+4	1003	7382487800548979	C:/C++ programmeerimine/QtProov/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/QtProov_autogen/mocs_compilation.cpp	36515b2d307614e
+1007	3784	7382487828984372	CMakeFiles/QtProov.dir/s.cpp.obj	85eab0a2e3ab5a8a
+1005	4667	7382487837836000	CMakeFiles/QtProov.dir/main.cpp.obj	32d7b65111d4247c
+1003	4703	7382487838176746	CMakeFiles/QtProov.dir/QtProov_autogen/mocs_compilation.cpp.obj	cdeb528cc4209aa4
+4703	4939	7382487840452280	QtProov.exe	40586f354d7010db

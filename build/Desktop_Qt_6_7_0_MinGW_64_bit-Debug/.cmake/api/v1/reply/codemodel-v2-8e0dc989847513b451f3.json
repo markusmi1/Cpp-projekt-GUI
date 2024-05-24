@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-ae87a7f392e367105a6a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "QtProov",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "QtProov::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-QtProov-Debug-18572fbfaba85b9c7aaa.json",
+					"name" : "QtProov",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "QtProov_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-QtProov_autogen-Debug-b5c8ae64a6e33afaf893.json",
+					"name" : "QtProov_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "QtProov_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-QtProov_autogen_timestamp_deps-Debug-85f399f000a94e07fdc5.json",
+					"name" : "QtProov_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/C++ programmeerimine/QtProov/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug",
+		"source" : "C:/C++ programmeerimine/QtProov"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
